@@ -3,12 +3,12 @@ import "../styles/app.scss";
 
 const montserrat = Montserrat({
     subsets: ["latin"],
-    weight: ["400", "500", "700"],
+    variable: '--font-montserrat',
 });
 
 function MyApp({ Component, pageProps }) {
     return (
-        <div className={montserrat.className}>
+        <div className={`bg-white dark:bg-black font-sans ${montserrat.variable}`}>
             <Component {...pageProps} />
         </div>
     );

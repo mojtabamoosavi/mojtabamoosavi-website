@@ -1,4 +1,7 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
+    darkMode: 'class',
     content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
@@ -6,11 +9,10 @@ module.exports = {
     ],
     theme: {
         extend: {
-            spacing: {},
-            colors: {},
+            fontFamily: {
+                sans: ['var(--font-montserrat)', ...fontFamily.sans],
+            },
         },
-        lineHeight: {},
-        fontSize: {},
         container: {
             center: true,
             padding: "15px",

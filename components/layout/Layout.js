@@ -1,15 +1,23 @@
 import Head from "next/head";
+import Header from "./Header";
+import Footer from "./Footer";
 
-export default function Layout({title, children}) {
+export default function Layout({ title, children }) {
     return (
         <>
             <Head>
-                <title>{title ? title : 'Mojtaba Moosavi'}</title>
-                <link rel="icon" type="image/png" href="/favicon.png"/>
+                <title>{title ? `Mojtaba Moosavi - ${title}` : "Mojtaba Moosavi"}</title>
+                <link rel="icon" type="image/png" href="/favicon.png" />
             </Head>
 
-            <div>
-                {children}
+            <div className="flex min-h-screen flex-col">
+                <Header />
+
+                <div className="flex flex-col flex-1">
+                    {children}
+                </div>
+
+                <Footer />
             </div>
 
             {/*<p>I&rsquo;m a front end developer with +8 years of professional experience, based in Tehran.<br />*/}
@@ -21,12 +29,6 @@ export default function Layout({title, children}) {
             {/*<p>Download my Resume: <a href="http://www.mojtabamoosavi.ir/Resume_Mojtaba-Moosavi.pdf" target="_blank">Resume</a></p>*/}
 
             {/*<p>Thanks for reading!</p>*/}
-
-            <footer className="footer">
-                <section className="container">
-                    © 2019 · Powered by <a href="https://nextjs.org">NextJS</a> & <a href="https://github.com">Github Pages</a>.
-                </section>
-            </footer>
         </>
     );
 }
