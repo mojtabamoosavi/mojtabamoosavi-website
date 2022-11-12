@@ -1,5 +1,11 @@
+import Layout from "../components/Layout";
+
 export default function Home() {
     return (
-        <div>adasda</div>
-    )
+        <Layout>
+            <div className="container">
+                Mojtaba Moosavi
+            </div>
+        </Layout>
+    );
 }
