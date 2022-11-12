@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
@@ -7,10 +6,10 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
-    assetPrefix: isProd ? "/mojtabamoosavi-website/" : "",
+    // assetPrefix: isProd ? "/mojtabamoosavi-website/" : "",
     images: {
         unoptimized: true,
     },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
