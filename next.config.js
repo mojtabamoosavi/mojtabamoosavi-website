@@ -6,7 +6,7 @@ const nextConfig = {
     experimental: {
         appDir: true,
     },
-    // assetPrefix: isProd ? "/mojtabamoosavi-website/" : "",
+    assetPrefix: isProd ? "/mojtabamoosavi-website" : undefined,
     images: {
         unoptimized: true,
     },
