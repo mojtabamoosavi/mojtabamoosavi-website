@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import Icon from "@mdi/react";
-import { mdiEmail, mdiPhone } from "@mdi/js";
+import ThemeSwitch from "./ThemeSwitch";
+import ActiveLink from "../base/ActiveLink";
 
 const nav = [
     {
@@ -12,30 +11,18 @@ const nav = [
     {
         id: 2,
         title: "About",
-        href: "/",
+        href: "/about",
     },
     {
         id: 3,
-        title: "Blog",
-        href: "/",
-    },
-    {
-        id: 4,
-        title: "Projects",
-        href: "/",
-    },
-    {
-        id: 5,
         title: "Contact",
-        href: "/",
+        href: "/contact",
     },
 ];
 
 export default function Header() {
-    const { theme, setTheme } = useTheme();
-
     return (
-        <header className="py-4">
+        <header className="py-6">
             <div className="container">
                 <div className="flex justify-between items-center">
                     <div className="text-lg font-semibold text-black dark:text-white">
@@ -47,23 +34,15 @@ export default function Header() {
                             {nav.map(navItem => {
                                 return (
                                     <li key={navItem.id} className="mr-6 last:mr-0">
-                                        <Link href={navItem.href} className="text-black dark:text-white">
-                                            {navItem.title}
-                                        </Link>
+                                        <ActiveLink href={navItem.href} className="font-medium text-gray-500" activeClassName="text-black dark:text-white">
+                                            <span>{navItem.title}</span>
+                                        </ActiveLink>
                                     </li>
                                 );
                             })}
                         </ul>
 
-                        <button
-                            className="ml-6 px-4 py-2 text-sm text-white dark:text-black bg-black dark:bg-white rounded-md"
-                            onClick={() => {
-                                setTheme(theme === "light" ? "dark" : "light");
-                            }}>
-                            Change Theme
-                        </button>
-
-                        <Icon path={mdiPhone} size="14px" className="ml-10" />
+                        <ThemeSwitch />
                     </nav>
                 </div>
             </div>

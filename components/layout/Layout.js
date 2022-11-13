@@ -13,22 +13,12 @@ export default function Layout({ title, children }) {
             <div className="flex min-h-screen flex-col">
                 <Header />
 
-                <div className="flex flex-col flex-1">
+                <div className="flex flex-col flex-1 my-10">
                     {children}
                 </div>
 
                 <Footer />
             </div>
-
-            {/*<p>I&rsquo;m a front end developer with +8 years of professional experience, based in Tehran.<br />*/}
-            {/*    I&rsquo;m using the most sophisticated technologies available today for fully interactive<br />*/}
-            {/*    and responsive websites and web applications.</p>*/}
-
-            {/*<p>You can contact me through <a href="http://www.mojtabamoosavi.ir/contact">my contact page</a></p>*/}
-
-            {/*<p>Download my Resume: <a href="http://www.mojtabamoosavi.ir/Resume_Mojtaba-Moosavi.pdf" target="_blank">Resume</a></p>*/}
-
-            {/*<p>Thanks for reading!</p>*/}
         </>
     );
 }

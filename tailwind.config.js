@@ -10,7 +10,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['var(--font-montserrat)', ...fontFamily.sans],
+                sans: ['var(--font-inter)', ...fontFamily.sans],
+            },
+            colors: {
+                primary: "#985aaa",
             },
         },
         container: {
@@ -21,7 +24,7 @@ module.exports = {
                 md: "768px",
                 lg: "992px",
                 xl: "1200px",
-                "2xl": "1400px",
+                "2xl": "1200px",
             },
         },
     },

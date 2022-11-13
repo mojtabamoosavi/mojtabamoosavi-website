@@ -1,15 +1,15 @@
 import { ThemeProvider } from 'next-themes'
-import { Montserrat } from "@next/font/google";
+import { Inter } from "@next/font/google";
 import "../styles/app.scss";
 
-const montserrat = Montserrat({
+const inter = Inter({
     subsets: ["latin"],
-    variable: '--font-montserrat',
+    variable: '--font-inter',
 });
 
 function MyApp({ Component, pageProps }) {
     return (
-        <div className={`bg-white dark:bg-black font-sans ${montserrat.variable}`}>
+        <div className={`bg-white dark:bg-black font-sans ${inter.variable}`}>
             <ThemeProvider enableSystem={false} attribute="class" enableColorScheme={false}>
                 <Component {...pageProps} />
             </ThemeProvider>
