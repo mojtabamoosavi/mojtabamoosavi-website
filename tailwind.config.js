@@ -13,7 +13,7 @@ module.exports = {
                 sans: ['var(--font-inter)', ...fontFamily.sans],
             },
             colors: {
-                primary: "#985aaa",
+                primary: "#6667ab",
             },
         },
         container: {
@@ -28,5 +28,7 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 };

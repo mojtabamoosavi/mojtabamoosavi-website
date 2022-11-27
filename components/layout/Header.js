@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ThemeSwitch from "./ThemeSwitch";
-import ActiveLink from "../base/ActiveLink";
+import ThemeSwitch from "components/layout/ThemeSwitch";
+import ActiveLink from "components/base/ActiveLink";
 
 const nav = [
     {
