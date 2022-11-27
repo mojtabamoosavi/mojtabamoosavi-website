@@ -9,11 +9,11 @@ const inter = Inter({
 
 function MyApp({ Component, pageProps }) {
     return (
-        <div className={`bg-white dark:bg-black font-sans ${inter.variable}`}>
-            <ThemeProvider enableSystem={false} attribute="class" enableColorScheme={false}>
+        <ThemeProvider enableSystem={false} attribute="class" enableColorScheme={false}>
+            <div className={`bg-white dark:bg-black font-sans ${inter.variable}`}>
                 <Component {...pageProps} />
-            </ThemeProvider>
-        </div>
+            </div>
+        </ThemeProvider>
     );
 }
 
