@@ -11,7 +11,8 @@ export default function Sidebar() {
     const { isSidebarCollapsed, closeSidebar } = useContext(SidebarContext);
 
     const sidebarClassNames = classNames(
-        "z-20 flex flex-col border-r border-light dark:border-dark-light transition-transform",
+        "z-20 flex flex-col border-r border-light dark:border-dark-light",
+        "transition transform transition-transform motion-reduce:transition-none",
         "bg-white dark:bg-black",
         "p-[40px]",
         "w-[300px] max-w-[100%]",
