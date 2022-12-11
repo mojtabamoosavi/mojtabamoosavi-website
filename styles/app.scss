@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import "toastify";
+
+@supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+        min-height: -webkit-fill-available;
+    }
+}
