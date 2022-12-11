@@ -1,50 +1,37 @@
-import Layout from "components/layout/Layout";
+import PageLayout from "components/layout/PageLayout";
 import ContactForm from "components/contact/ContactForm";
-import { mdiEmailOutline, mdiPhoneOutline } from "@mdi/js";
 import Icon from "@mdi/react";
+import { contact } from "config/vars";
 
 export default function Contact() {
     return (
-        <Layout title="Contact">
-            <div className="container">
-                <div className="mx-auto max-w-3xl">
-                    <div className="text-black dark:text-white">
-                        <h1 className="text-center text-4xl font-bold mb-16">Contact</h1>
-
-                        <div className="grid grid-cols-2 gap-y-4 gap-x-4 mb-10">
-                            <div className="relative flex gap-4 bg-gray-100 dark:bg-neutral-800 rounded overflow-hidden">
-                                <div className="flex h-12 w-12 items-center justify-center bg-primary text-white h-auto">
-                                    <Icon
-                                        path={mdiEmailOutline}
-                                        size="24px"
-                                    />
-                                </div>
-
-                                <div className="sm:min-w-0 sm:flex-1">
-                                    <p className="font-semibold text-gray-900 dark:text-white mt-1">Email</p>
-                                    <p className="text-sm leading-7 text-gray-600 mb-1 dark:text-white">info [at] mojtabamoosavi@gmail.com</p>
-                                </div>
+        <PageLayout title="Contact">
+            <div className="grid grid-cols-3 gap-x-[30px] mb-[50px]">
+                {contact.map(item => {
+                    return (
+                        <div key={item.id} className="flex flex-col">
+                            <div className="text-primary">
+                                <Icon
+                                    path={item.icon}
+                                    size="36px"
+                                />
                             </div>
 
-                            <div className="relative flex gap-4 bg-gray-100 dark:bg-neutral-800 rounded overflow-hidden">
-                                <div className="flex h-12 w-12 items-center justify-center bg-primary text-white h-auto">
-                                    <Icon
-                                        path={mdiPhoneOutline}
-                                        size="24px"
-                                    />
-                                </div>
+                            <div className="sm:min-w-0 sm:flex-1">
+                                <p className="mt-[5px] font-semibold text-[16px] text-black dark:text-white">
+                                    {item.title}
+                                </p>
 
-                                <div className="sm:min-w-0 sm:flex-1">
-                                    <p className="font-semibold text-gray-900 dark:text-white mt-1">Phone</p>
-                                    <p className="text-sm leading-7 text-gray-600 dark:text-white mb-1">+98 935 767 7182</p>
-                                </div>
+                                <p className="mt-[5px] font-medium text-[14px] text-muted">
+                                    {item.value}
+                                </p>
                             </div>
                         </div>
-
-                        <ContactForm />
-                    </div>
-                </div>
+                    );
+                })}
             </div>
-        </Layout>
+
+            <ContactForm />
+        </PageLayout>
     );
 }

@@ -1,7 +1,7 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    darkMode: 'class',
+    darkMode: "class",
     content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
@@ -10,15 +10,18 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['var(--font-inter)', ...fontFamily.sans],
+                sans: ["var(--font-montserrat)", ...fontFamily.sans],
             },
             colors: {
-                primary: "#6667ab",
+                primary: "#985aaa",
+                muted: "#888",
+                light: "#ddd",
+                "dark-light": "#333",
             },
         },
         container: {
             center: true,
-            padding: "15px",
+            padding: "30px",
             screens: {
                 sm: "576px",
                 md: "768px",
@@ -29,6 +32,6 @@ module.exports = {
         },
     },
     plugins: [
-        require('@tailwindcss/forms'),
+        require("@tailwindcss/forms"),
     ],
 };

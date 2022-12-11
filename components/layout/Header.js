@@ -1,50 +1,29 @@
 import Link from "next/link";
-import ThemeSwitch from "components/layout/ThemeSwitch";
-import ActiveLink from "components/base/ActiveLink";
-
-const nav = [
-    {
-        id: 1,
-        title: "Home",
-        href: "/",
-    },
-    {
-        id: 2,
-        title: "About",
-        href: "/about",
-    },
-    {
-        id: 3,
-        title: "Contact",
-        href: "/contact",
-    },
-];
+import Image from "next/image";
+import { motion } from "framer-motion";
+import avatar from "public/avatar.jpg";
 
 export default function Header() {
     return (
-        <header className="py-6">
-            <div className="container">
-                <div className="flex justify-between items-center">
-                    <div className="text-lg font-semibold text-black dark:text-white">
-                        <Link href="/">Mojtaba Moosavi</Link>
-                    </div>
+        <header>
+            <div className="text-center">
+                <Link href="/">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        animate={{ opacity: 1, scale: 1 }}>
+                        <Image
+                            src={avatar}
+                            alt="avatar"
+                            className="inline-flex rounded-full w-[120px] h-[120px]"
+                            priority
+                        />
+                    </motion.div>
+                </Link>
+            </div>
 
-                    <nav className="flex items-center">
-                        <ul className="flex">
-                            {nav.map(navItem => {
-                                return (
-                                    <li key={navItem.id} className="mr-6 last:mr-0">
-                                        <ActiveLink href={navItem.href} className="font-medium text-gray-500" activeClassName="text-black dark:text-white">
-                                            <span>{navItem.title}</span>
-                                        </ActiveLink>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-
-                        <ThemeSwitch />
-                    </nav>
-                </div>
+            <div className="mt-4 text-center">
+                <h1 className="text-[22px] font-bold text-black dark:text-white">Mojtaba Moosavi</h1>
+                <h2 className="text-[16px] font-semibold text-muted">Front-End Developer</h2>
             </div>
         </header>
     );

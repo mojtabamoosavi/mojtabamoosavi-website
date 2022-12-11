@@ -2,18 +2,26 @@ import { useField } from "formik";
 import classNames from "classnames";
 import ErrorMessage from "components/formik/ErrorMessage";
 
-export function Input({ label, className, type, ...props }) {
+function Input({ label, className, type, ...props }) {
     const [field, meta] = useField(props);
 
     const formControlClassName = classNames(
-        "mt-1 block w-full rounded-md border-gray-300 dark:border-neutral-700 shadow-sm focus:border-primary focus:ring-primary sm:text-sm bg-white dark:bg-black",
+        "block w-full h-[40px] sm:text-sm",
+        "text-black dark:text-white",
+        "border-light dark:border-dark-light",
+        "bg-white dark:bg-black",
+        "focus:border-primary focus:ring-primary dark:focus:border-primary dark:focus:ring-primary",
         { "border-red-700 dark:border-red-700": meta.touched && meta.error },
         className,
     );
 
     return (
         <>
-            {label && <label htmlFor={field.name} className="block text-sm font-medium text-gray-500">{label}</label>}
+            {label &&
+                <label htmlFor={field.name} className="block mb-[5px] text-[14px] font-medium text-muted">
+                    {label}
+                </label>
+            }
 
             <input
                 {...field}
@@ -27,3 +35,5 @@ export function Input({ label, className, type, ...props }) {
         </>
     );
 }
+
+export default Input;

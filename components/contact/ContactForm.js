@@ -1,8 +1,12 @@
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import { useForm } from "@formspree/react";
-import { Input } from "components/formik/Input";
-import { TextArea } from "components/formik/TextArea";
+import Icon from "@mdi/react";
+import { mdiLoading } from "@mdi/js";
+import * as Yup from "yup";
+import Input from "components/formik/Input";
+import TextArea from "components/formik/TextArea";
+import Button from "components/base/Button";
+import toast from "services/toast";
 
 const validation = Yup.object().shape({
     name: Yup.string().required().label("Name"),
@@ -19,6 +23,7 @@ export default function ContactForm() {
             .then(response => {
                 if (response.response.status === 200) {
                     actions.resetForm();
+                    toast("Your message received successfully.")
                 }
             });
     };
@@ -34,14 +39,10 @@ export default function ContactForm() {
             }}
             validationSchema={validation}
             onSubmit={(values, actions) => handleFormSubmit(values, actions)}>
-            {() => {
+            {({ isSubmitting }) => {
                 return (
                     <Form>
-                        {state.succeeded &&
-                            <div className="mb-6 bg-emerald-500 text-white rounded px-2 py-2 text-sm text-center">Your message received successfully.</div>
-                        }
-
-                        <div className="grid grid-cols-6 gap-y-6 gap-x-5">
+                        <div className="grid grid-cols-6 gap-y-[20px] gap-x-[30px]">
                             <div className="col-span-2">
                                 <Input
                                     name="name"
@@ -72,12 +73,12 @@ export default function ContactForm() {
                             </div>
 
                             <div className="col-span-2">
-                                <button
-                                    disabled={state.submitting}
-                                    type="submit"
-                                    className="bg-primary text-white py-2 px-4 w-28 rounded">
-                                    {state.submitting ? "Loading" : "Send"}
-                                </button>
+                                <Button
+                                    className="w-[140px]"
+                                    disabled={isSubmitting}
+                                    type="submit">
+                                    {isSubmitting ? <Icon path={mdiLoading} spin={0.5} size="24px" /> : "Send"}
+                                </Button>
                             </div>
                         </div>
                     </Form>

@@ -1,17 +1,31 @@
-import Image from "next/image";
-import Layout from "components/layout/Layout";
-import avatar from 'public/avatar.jpg'
+import PageLayout from "components/layout/PageLayout";
+import Button from "components/base/Button";
 
 export default function Home() {
+
+    const downloadCV = () => {
+        window.open('/Resume.pdf', '_blank')
+    }
+
     return (
-        <Layout>
+        <PageLayout>
             <div className="flex flex-1 justify-center items-center">
-                <div className="flex flex-col items-center">
-                    <Image src={avatar} alt="avatar" className="mb-6 rounded-full border border-4 border-primary" priority />
-                    <h1 className="text-4xl font-bold text-black dark:text-white">Mojtaba Moosavi</h1>
-                    <h2 className="text-xl text-gray-400 mt-3">Front-End Developer</h2>
+                <div className="max-w-[500px]">
+                    <h1 className="text-[70px] uppercase font-black leading-none text-black dark:text-white">Hello,</h1>
+
+                    <p className="mt-[40px] text-[18px] text-muted">
+                        I am Mojtaba Moosavi, Front-End developer with
+                        over 10 years of professional experience, based in Tehran. I enjoy creating things that live on
+                        the internet.
+                    </p>
+
+                    <div className="mt-[40px]">
+                        <Button className="w-auto" onClick={() => downloadCV()}>
+                            Download my CV
+                        </Button>
+                    </div>
                 </div>
             </div>
-        </Layout>
+        </PageLayout>
     );
 }
