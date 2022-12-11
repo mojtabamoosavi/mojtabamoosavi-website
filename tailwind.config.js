@@ -16,7 +16,7 @@ module.exports = {
                 primary: "#985aaa",
                 muted: "#888",
                 light: "#ddd",
-                "dark-light": "#333",
+                "dark-light": "#222",
             },
         },
         container: {
