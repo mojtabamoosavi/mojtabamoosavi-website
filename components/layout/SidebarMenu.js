@@ -1,9 +1,9 @@
 import ActiveLink from "components/base/ActiveLink";
 import { menu } from "config/vars";
 
-export default function Menu() {
+export default function SidebarMenu() {
     return (
-        <nav className="flex-1 mt-[40px] text-center">
+        <nav className="flex-1 text-center">
             <ul>
                 {menu.map(navItem => (
                     <li key={navItem.id} className="mb-[20px] last:mb-0">

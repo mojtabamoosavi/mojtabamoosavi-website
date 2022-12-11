@@ -2,7 +2,7 @@ import Icon from "@mdi/react";
 import { social } from "config/vars";
 import ThemeSwitch from "components/layout/ThemeSwitch";
 
-export default function Footer() {
+export default function SidebarFooter() {
     return (
         <footer>
             <div className="flex mb-[20px] justify-center">

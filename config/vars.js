@@ -8,6 +8,9 @@ import {
     mdiTwitter,
 } from "@mdi/js";
 
+export const name = "Mojtaba Moosavi";
+export const position = "Front-End Developer";
+
 export const menu = [
     {
         id: 1,
@@ -69,7 +72,7 @@ export const contact = [
     {
         id: "email",
         title: "Email",
-        value: "info [at] mojtabamoosavi@gmail.com",
+        value: "info [at] mojtabamoosavi.ir",
         icon: mdiEmailOutline,
     },
     {
