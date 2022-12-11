@@ -6,7 +6,7 @@ function Input({ label, className, type, ...props }) {
     const [field, meta] = useField(props);
 
     const formControlClassName = classNames(
-        "block w-full h-[50px] sm:text-sm",
+        "block w-full h-[40px] lg:h-[50px] sm:text-sm",
         "text-black dark:text-white",
         "border-light dark:border-dark-light",
         "bg-white dark:bg-black",

@@ -6,10 +6,10 @@ import { contact } from "config/vars";
 export default function Contact() {
     return (
         <PageLayout title="Contact">
-            <div className="grid grid-cols-3 gap-x-[30px] mb-[50px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-[30px] gap-x-[20px] lg:gap-x-[30px] mb-[50px]">
                 {contact.map(item => {
                     return (
-                        <div key={item.id} className="flex flex-col">
+                        <div key={item.id} className="flex items-center md:items-start md:flex-col">
                             <div className="text-primary">
                                 <Icon
                                     path={item.icon}
@@ -17,8 +17,8 @@ export default function Contact() {
                                 />
                             </div>
 
-                            <div className="sm:min-w-0 sm:flex-1">
-                                <p className="mt-[5px] font-semibold text-[16px] text-black dark:text-white">
+                            <div className="ml-[20px] md:ml-0">
+                                <p className="mt-[5px] font-semibold text-[14px] lg:text-[16px] text-black dark:text-white">
                                     {item.title}
                                 </p>
 

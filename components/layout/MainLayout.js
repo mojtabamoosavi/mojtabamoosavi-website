@@ -11,7 +11,7 @@ export default function MainLayout({ children }) {
             <Sidebar />
 
             <div className="lg:ml-[300px] flex flex-col flex-1">
-                <div className="container flex-1 flex flex-col py-[100px]">
+                <div className="container flex-1 flex flex-col py-[30px] lg:py-[50px] xl:py-[100px]">
                     {children}
                 </div>
             </div>

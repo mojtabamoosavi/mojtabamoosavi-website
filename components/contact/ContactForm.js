@@ -42,22 +42,22 @@ export default function ContactForm() {
             {({ isSubmitting }) => {
                 return (
                     <Form>
-                        <div className="grid grid-cols-6 gap-y-[20px] gap-x-[30px]">
-                            <div className="col-span-2">
+                        <div className="grid grid-cols-6 gap-y-[20px] gap-x-[20px] lg:gap-x-[30px]">
+                            <div className="col-span-6 md:col-span-2">
                                 <Input
                                     name="name"
                                     label="Name"
                                 />
                             </div>
 
-                            <div className="col-span-2">
+                            <div className="col-span-6 md:col-span-2">
                                 <Input
                                     name="email"
                                     label="Email"
                                 />
                             </div>
 
-                            <div className="col-span-2">
+                            <div className="col-span-6 md:col-span-2">
                                 <Input
                                     name="phone"
                                     label="Phone"
