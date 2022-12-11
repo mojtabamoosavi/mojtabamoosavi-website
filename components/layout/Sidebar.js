@@ -26,24 +26,16 @@ export default function Sidebar() {
         };
 
         router.events.on("routeChangeComplete", handleRouteChange);
-
-        return () => {
-            router.events.off("routeChangeComplete", handleRouteChange);
-        };
+        return () => router.events.off("routeChangeComplete", handleRouteChange);
     }, []);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if(event.keyCode === 27) {
-                closeSidebar();
-            }
+            event.keyCode === 27 && closeSidebar();
         };
 
         document.addEventListener("keydown", handleKeyDown, false);
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown, false);
-        };
+        return () => document.removeEventListener("keydown", handleKeyDown, false);
     }, []);
 
     return (
