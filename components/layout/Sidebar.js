@@ -12,12 +12,12 @@ export default function Sidebar() {
 
     const sidebarClassNames = classNames(
         "z-20 flex flex-col border-r border-light dark:border-dark-light",
-        "transition transform transition-transform motion-reduce:transition-none",
+        "transition transition-[left]",
         "bg-white dark:bg-black",
         "p-[40px]",
         "w-[300px] max-w-[100%]",
         "fixed top-[80px] bottom-0 left-0 lg:top-0",
-        { "translate-x-[-300px] lg:translate-x-0": isSidebarCollapsed },
+        { "left-[-300px] lg:left-0": isSidebarCollapsed },
     );
 
     useEffect(() => {
