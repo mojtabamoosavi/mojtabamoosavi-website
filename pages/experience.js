@@ -62,12 +62,12 @@ export default function Experience() {
         <PageLayout title="Experience">
             <div className="relative">
                 <div>
-                    {experience.map(item => (
+                    {experience.map((item, index) => (
                         <div key={item.key} className="relative pl-[40px] mb-[100px] last:mb-0">
                             <motion.div
                                 initial="initial"
                                 whileInView="visible"
-                                custom={item.key}
+                                custom={index + 1}
                                 viewport={{ once: true }}
                                 variants={bulletVariants}
                                 className="absolute left-[-4px] top-[5px] w-[9px] h-[9px] bg-primary z-[1]"
