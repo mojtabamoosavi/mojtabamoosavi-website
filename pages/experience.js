@@ -3,32 +3,32 @@ import PageLayout from "components/layout/PageLayout";
 
 const experience = [
     {
-        key: 1,
-        title: "Academic Degree",
+        key: "Payrad",
+        title: "Payrad",
         time: "2019 - Present",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: 2,
-        title: "Bachelor’s Degree",
+        key: "FanapPlus",
+        title: "Fanap Plus",
         time: "2017 - 2013",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: 3,
-        title: "Honours Degree",
+        key: "Aypan",
+        title: "Aypan",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: 4,
-        title: "Academic Degree",
+        key: "TabrizPetrochemical",
+        title: "Tabriz Petrochemical",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: 5,
-        title: "Bachelor’s Degree",
+        key: "Avijeh",
+        title: "Avijeh",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
@@ -42,9 +42,9 @@ export default function Experience() {
         }),
         visible: (custom) => ({
             scale: 1,
-            transition: { delay: custom * 0.1 }
-        })
-    }
+            transition: { delay: custom * 0.1 },
+        }),
+    };
 
     const itemVariants = {
         initial: () => ({
@@ -54,9 +54,9 @@ export default function Experience() {
         visible: (custom) => ({
             opacity: 1,
             x: 0,
-            transition: { delay: custom * 0.1 }
-        })
-    }
+            transition: { delay: custom * 0.1 },
+        }),
+    };
 
     return (
         <PageLayout title="Experience">
@@ -79,7 +79,7 @@ export default function Experience() {
                                 initial="initial"
                                 whileInView="visible"
                                 variants={itemVariants}
-                                transition={{ type: 'linear' }}
+                                transition={{ type: "linear" }}
                                 viewport={{ once: true }}>
                                 <div className="text-[14px] text-muted">{item.time}</div>
                                 <div className="my-[16px] font-bold text-[18px] text-black dark:text-white">
