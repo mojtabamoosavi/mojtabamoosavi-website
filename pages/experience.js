@@ -3,8 +3,8 @@ import PageLayout from "components/layout/PageLayout";
 
 const experience = [
     {
-        key: "Payrad",
-        title: "Payrad",
+        key: "PayradSmartSolutions",
+        title: "Payrad Smart Solutions",
         time: "2019 - Present",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
