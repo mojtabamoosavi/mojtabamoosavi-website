@@ -3,31 +3,31 @@ import PageLayout from "components/layout/PageLayout";
 
 const experience = [
     {
-        key: "PayradSmartSolutions",
+        key: 1,
         title: "Payrad Smart Solutions",
         time: "2019 - Present",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: "FanapPlus",
+        key: 2,
         title: "Fanap Plus",
         time: "2017 - 2013",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: "Aypan",
+        key: 3,
         title: "Aypan",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: "TabrizPetrochemical",
+        key: 4,
         title: "Tabriz Petrochemical",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
     },
     {
-        key: "Avijeh",
+        key: 5,
         title: "Avijeh",
         time: "2013 - 2009",
         description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.",
@@ -62,12 +62,12 @@ export default function Experience() {
         <PageLayout title="Experience">
             <div className="relative">
                 <div>
-                    {experience.map((item, index) => (
+                    {experience.map((item) => (
                         <div key={item.key} className="relative pl-[40px] mb-[100px] last:mb-0">
                             <motion.div
                                 initial="initial"
                                 whileInView="visible"
-                                custom={index + 1}
+                                custom={item.key}
                                 viewport={{ once: true }}
                                 variants={bulletVariants}
                                 className="absolute left-[-4px] top-[5px] w-[9px] h-[9px] bg-primary z-[1]"
