@@ -4,7 +4,7 @@ import Button from "components/base/Button";
 export default function Home() {
 
     const downloadCV = () => {
-        window.open('/Resume.pdf', '_blank')
+        window.open('/Resume-2023-07-31.pdf', '_blank')
     }
 
     return (
